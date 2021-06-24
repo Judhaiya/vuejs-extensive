@@ -3,8 +3,7 @@
   <h2>Products</h2>
  
   <div class="container">
-  <Categories/>
-  </div>
+   
 
   <!-- Button trigger modal -->
 <button type="button" class=" add-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -28,65 +27,98 @@
          <option>Books</option>
         </select>
         <label for="Product title"> Title</label>
-       <input type="text" placeholder="lipstick"><br>
-       <label for="Price">Price</label>
-       <input type="text" placeholder="$ 200"><br>
+       <input type="text" v-model="title" placeholder="lipstick"><br>
+       <label for="Price" >Price</label>
+       <input type="number" v-model="price" placeholder="$ 200"><br>
        <input value="Topcategory" type="checkbox" v-model="quality">
        <label for="Price">Top Products</label>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Edit</button>
+        <button type="button" class="btn btn-primary" v-on:click="add" data-bs-dismiss="modal">submit</button>
       </div>
     </div>
   </div>
 
 </div>
-{{selected}}
-{{quality}}
+ <div class="sort-flex">
+    <Sort/>
+    </div>
+    <div class="grid">
+  <div class="for-categories">
+ <Categories/>
+ <Slider/>
+  </div>
+<div class="top-product">
+  
+ <Topproduct/>
+</div>
+    </div>
+  </div>
 
   </div>
 </template>
 
 <script>
 import Categories from './components/categories.vue'
+import Topproduct from './components/topproducts.vue'
+import Sort from './components/Sort.vue'
+import Slider from "./components/Slider.vue"
 
 export default {
   name: 'App',
   components: {
-   Categories
+   Categories,
+   Topproduct,
+   Sort,
+   Slider
   },
   data(){
     return{
       selected:"",
     
-      quality:[]
+      quality:[],
+      title:"",
+      price:""
 
     }
   },
   methods:{
+    add(){
+      if(this.quality.includes("Topcategory")){
+      this.$store.state.BestSeller.push({productName:this.title,price:this.price})
+    }
+    this.price="",
+    this.title=""
+    }
  }
   
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
 }
 .container{
   width:100%;
   max-width:1024px;
   margin:0 auto;
   padding:0 15px;
+ 
 }
 .add-button{
   position:absolute;
   right:20px;
+}
+.sort-flex{
+  display:flex;
+  justify-content: flex-end;
+}
+.grid{
+  display:flex;
+  justify-content: space-around;
 }
 </style>

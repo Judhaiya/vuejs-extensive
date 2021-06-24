@@ -1,29 +1,32 @@
 <template>
     <div class="categories-wrapper">
       <h4>Categories</h4>
+      <div class="cat-prod">
       <div class="categories">
         <button v-on:click="categorize('Books')">Books</button>
       
         <button v-on:click="categorize('cosemetics')">Cosmetics</button>
         <button v-on:click="categorize('electronics')">electronics</button>
         <button v-on:click="categorize('Music')">Music</button>
-      </div>
-     
+     </div>
+     <div class="product-grid">
     <div v-for="(category,i) in someArray " :key="i" class="loop">
      <p>{{category.productName}}</p>
      <p>{{category.price}}</p>    
      <p>{{category.grade}}</p>
+     <img class="product-img" :src="category.img" alt="">
     </div>
-   <div class="pagination">
- {{priceRange}}
+     </div>
+      </div>
+   <div class="price-range">
+<input type="range" @input="changePrice" id="vol" v-model="vol" name="vol" min="100" max="2000">
+  </div>
    <div v-for="(category,i) in  priceRanges " :key="i" class="loop">
      <p>{{category.productName}}</p>
       <p>{{category.grade}}</p>
+       {{priceRange}}
     </div>
-   </div>
-    
-  <input type="range" @input="changePrice" id="vol" v-model="vol" name="vol" min="100" max="2000">
-      {{vol}}
+  {{vol}}
     </div>
    
 </template>
@@ -70,16 +73,38 @@ data(){
 
 <style>
 .categories-wrapper{
-    position:absolute;
-    left:20px;
-
+  position:relative;
 }
 .categories{
+    width:200px;
     padding:20px;
-    background-color:skyblue 
+    background-color:skyblue ;
+    position:fixed;
+    left:20px;
+    top:50px;
 }
 button{
     display:block;
     margin-bottom:20px ;
 }
-</style>
+.product-img{
+  width:200px;
+  height:200px;
+  object-fit: cover;
+}
+.product-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-column-gap:20px;
+  margin-left:1rem;
+}
+.cat-prod{
+   display:flex;
+   
+}
+.price-range{
+  position:absolute;
+
+   left:40px;
+}
+</style>  

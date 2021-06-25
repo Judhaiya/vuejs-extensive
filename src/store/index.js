@@ -166,19 +166,22 @@ const store=new Vuex.Store({
                productName:"Lakme Lip Love Chapstick SPF 15 - Insta Pink",
                 price:439,
                 review:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>',
-                discount:'30%-40%'
+                discount:'30%-40%',
+                img:Lipstick
           },
           {
             productName:"Lakme Vitamin C+ Serum",
              price:600,
              review:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>',
-             discount:'20%-30%'
+             discount:'20%-30%',
+             img:Lipstick
        },
        {
         productName:"Lakme Absolute Argan Oil Radiance Oil-In Gel Cream",
          price:1200,
          review:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
-         discount:'40%-50%'
+         discount:'40%-50%',
+         img:Lipstick
        },
         ],
         sortedProducts:[

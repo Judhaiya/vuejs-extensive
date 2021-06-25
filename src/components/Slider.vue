@@ -6,7 +6,7 @@
           <div v-for="(category,i) in  priceRanges " :key="i" class="loop">
      <p>{{category.productName}}</p>
       <p>{{category.grade}}</p>
-       {{priceRange}}
+     
     </div>
     </div>
 </template>
@@ -36,3 +36,9 @@ export default {
 }
 </script>
 
+<style>
+.price-range{
+    display:flex;
+    justify-content:flex-start ;
+}
+</style>

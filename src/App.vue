@@ -37,7 +37,7 @@
   Add Details
 </button>
   </div>
-
+ <Sort/>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -76,7 +76,7 @@
 
   <div class="for-categories">
  <Categories/>
- <Sort/>
+  <UpdateProduct/>
   </div>
 
      <Slider/>
@@ -92,14 +92,15 @@ import Categories from './components/categories.vue'
 import Topproduct from './components/topproducts.vue'
 import Sort from './components/Sort.vue'
 import Slider from "./components/Slider.vue"
-
+import UpdateProduct from "./components/UpdateProduct.vue"
 export default {
   name: 'App',
   components: {
    Categories,
    Topproduct,
    Sort,
-   Slider
+   Slider,
+   UpdateProduct
   },
   data(){
     return{
@@ -191,5 +192,8 @@ export default {
   border:none;
   outline:none;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+}
+.for-categories{
+  display:flex;
 }
 </style>

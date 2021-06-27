@@ -1,16 +1,18 @@
 <template>
    <div class="top-products">
-      <h3>Top Products this week</h3>
+      <h5 class="top-title">Top Products this week</h5>
    <div class="top-product-grid">
       
       <div class="product-card" v-for="(topProduct,i) in topProducts" :key="i">
+      <div class="img-wrapper">
        <img  class="topProduct-img" :src="topProduct.img" alt="">
+      </div>
        <div class="card-copy">
       <p>{{topProduct.productName}}</p>
       <span v-html="topProduct.review"></span>
       <p>{{topProduct.price}}</p>
-      <p>{{topProduct.discount}}</p>
-       </div>
+      <hr>
+   </div>
       <hr>
       
       </div>
@@ -33,6 +35,9 @@ export default {
 }
 </script>
 <style>
+.top-products{
+   margin-top:2rem;
+}
 .top-product-grid{
    display:grid;
    grid-template-columns: 1fr ;
@@ -41,16 +46,21 @@ export default {
   
 }
 .product-card{
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 220px;
+ 
+   display:flex;
+   font-size:12px;
 }
 .topProduct-img{
-   width:100%;
-   height:200px;
+   width:50px;
+   height:100px;
 }
 .card-copy{
-     padding: 2px 16px;
+     padding: 8px 16px;
 }
+.top-title{
+   font-size:20px;
+}
+
 </style>
 

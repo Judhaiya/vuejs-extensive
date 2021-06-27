@@ -10,7 +10,7 @@ const store=new Vuex.Store({
         productTypes:[
             {  
               id:1,
-              category:"cosemetics",
+              category:"cosmetics",
               productName:"Nail polish",
               price:400,
               img:Lipstick,
@@ -18,7 +18,7 @@ const store=new Vuex.Store({
             },
             {
                 id:2,
-                category:"cosemetics",
+                category:"cosmetics",
                 productName:"eyeshadow",
                 img:Lipshade,
                 price:500,
@@ -36,15 +36,15 @@ const store=new Vuex.Store({
                 id:4,
                 category:"Music",
                 productName:"locha-e-ulfat",
-                price:500,
+                price:1000,
                 img:eyelash,
                 grade:"top product"
               },
               {  
                 id:5,
-                category:"cosemetics",
+                category:"cosmetics",
                 productName:"foundation",
-                price:400,
+                price:800,
                 img:Lipshade,
                 grade:"top product"
               },
@@ -52,13 +52,13 @@ const store=new Vuex.Store({
                 id:6,
                 category:"Books",
                 productName:"Steal like an artist",
-                price:400,
+                price:900,
                 img:Lipstick,
                 grade:"top product"
               },
               {  
                 id:8,
-                category:"cosemetics",
+                category:"cosmetics",
                 productName:"Mascara",
                 img:eyelash,
                 price:1500,
@@ -74,7 +74,7 @@ const store=new Vuex.Store({
               },
               {  
                 id:10,
-                category:"cosemetics",
+                category:"cosmetics",
                 productName:"eyelash",
                 price:1200,
                 img:eyelash,
@@ -90,17 +90,17 @@ const store=new Vuex.Store({
               },
               {  
                 id:12,
-                category:"cosemetics",
+                category:"cosmetics",
                 productName:"primer",
-                price:400,
+                price:800,
                 img:Lipstick,
                 grade:"top product"
               },
               {  
                 id:13,
-                category:"cosemetics",
-                productName:"roller",
-                price:2000,
+                category:"Music",
+                productName:"Nazar na lag jaaye jaanu",
+                price:800,
                 img:eyelash,
                 grade:"top product"
               },
@@ -108,23 +108,23 @@ const store=new Vuex.Store({
                 id:14,
                 category:"Books",
                 productName:"The subtle art of not giving a fuck",
-                price:400,
+                price:1000,
                 img:Lipstick,
                 grade:"top product"
               },
               {  
                 id:15,
-                category:"cosemetics",
-                productName:"lip gloss",
+                category:"Music",
+                productName:"Ik Vaariya",
                 price:400,
                 img:Lipshade,
                 grade:"top product"
               },
               {  
                 id:16,
-                category:"cosemetics",
+                category:"cosmetics",
                 productName:"lip care",
-                price:400,
+                price:900,
                 grade:"top product",
                 img:Lipstick,
               },
@@ -140,7 +140,7 @@ const store=new Vuex.Store({
                 id:18,
                 category:"electronics",
                 productName:"hair curler",
-                price:400,
+                price:800,
                 grade:"top product",
                 img:Lipshade,
               },
@@ -148,7 +148,7 @@ const store=new Vuex.Store({
                 id:19,
                 category:"Books",
                 productName:"Evil by design",
-                price:400,
+                price:500,
                 grade:"top product",
                 img:eyelash,
               },
@@ -156,92 +156,17 @@ const store=new Vuex.Store({
                 id:20,
                 category:"electronics",
                 productName:"air buds",
-                price:400,
+                price:1400,
                 grade:"top product",
                 img:Lipstick,
               },
         ],
-        BestSeller:[
-          {
-               productName:"Lakme Lip Love Chapstick SPF 15 - Insta Pink",
-                price:439,
-                review:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>',
-                discount:'30%-40%',
-                img:Lipstick
-          },
-          {
-            productName:"Lakme Vitamin C+ Serum",
-             price:600,
-             review:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>',
-             discount:'20%-30%',
-             img:Lipstick
-       },
-       {
-        productName:"Lakme Absolute Argan Oil Radiance Oil-In Gel Cream",
-         price:1200,
-         review:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
-         discount:'40%-50%',
-         img:Lipstick
-       },
-        ],
-        sortedProducts:[
-      {
-        productName:"Kay Beauty Matte Blush - Mild Berry",
-        price:2000,
-        stars:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
-        review: "Oilfree"
-        },
-        {
-          productName:"Nykaa Matte Nail Enamel Polish - Pink Ruffle 152",
-          price:1800,
-          stars:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
-          review:"WaterResistant"
-          },
-          {
-            productName:"MAKE UP FOR EVER Mist & Fix Setting Spray",
-            price:1200,
-            stars:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
-            review:"vegan",
-            img:Lipstick,
-            },
-            {
-              productName:"MAKE UP FOR EVER Mist & Fix Setting Spray",
-              price:1200,
-              stars:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
-              review:"WaterResistant",
-              img:Lipstick,
-              },
-              {
-                productName:"MAKE UP FOR EVER Mist & Fix Setting Spray",
-                price:1200,
-                stars:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
-                review:"vegan",
-                img:Lipstick,
-                },
-                {
-                  productName:"MAKE UP FOR EVER Mist & Fix Setting Spray",
-                  price:1200,
-                  stars:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
-                  review:"WaterResistant",
-                  img:Lipstick,
-                  },
-                  {
-                    productName:"MAKE UP FOR EVER Mist & Fix Setting Spray",
-                    price:1200,
-                    stars:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
-                    review:"WaterResistant",
-                    img:Lipstick,
-                    },
-                    {
-                      productName:"MAKE UP FOR EVER Mist & Fix Setting Spray",
-                      price:1200,
-                      stars:'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>',
-                      review:"Vegan",
-                      img:Lipstick,
-                      }
-        ]
-
-         },
+        
+       
+         someArray:"",
+         duplicate:""
+         }
+        
   
 })
 export default store

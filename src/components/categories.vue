@@ -4,24 +4,20 @@
     <div class="categories-flex">
       <div class="cat-prod">
       <div class="categories">
+         <button  class="cat-buttons" v-on:click="ShowAll">All</button>
+         <hr>
         <button  class="cat-buttons" v-on:click="categorize('Books')">Books</button>
         <hr>
-        <button class="cat-buttons" v-on:click="categorize('cosemetics')">Cosmetics</button>
+        <button class="cat-buttons" v-on:click="categorize('cosmetics')">Cosmetics</button>
         <hr>
         <button  class="cat-buttons" v-on:click="categorize('electronics')">electronics</button>
         <hr>
         <button  class="cat-buttons" v-on:click="categorize('Music')">Music</button>
      </div>
-     <div class="product-grid">
-    <div v-for="(category,i) in someArray " :key="i" class="product-card">
-    <img class="product-img" :src="category.img" alt="">
-    <div class="card-copy">
-    <p>{{category.productName}}</p>
-     <p>{{category.price}}</p>    
-     <p>{{category.grade}}</p>
-    </div>
-   </div>
-     </div>
+     
+     
+   
+  
       </div>
     </div>
     </div>
@@ -34,22 +30,30 @@
 export default{
 data(){
     return{
-    someArray:[],
-   
+    something:"",
+    mode:true
    
     }
 },
- methods: {
-  categorize(item){
-    
-    return this.someArray=[... this.$store.state.productTypes.filter(product=>product.category ===item)];
-    
-  
-  },
-  
- },
+  methods:{
+         categorize(num){
+    return  this.$store.state.someArray=this.$store.state.productTypes.filter(item => item.category===num)
 
-}
+  },
+  ShowAll(){
+    
+     this.$store.state.someArray=this.$store.state.productTypes.map(item=>item)
+  }
+  }
+
+  
+   
+  
+ }
+
+ 
+
+
 
 </script>
 

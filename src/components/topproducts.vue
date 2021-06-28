@@ -3,13 +3,13 @@
       <h5 class="top-title">Top Products this week</h5>
    <div class="top-product-grid">
       
-      <div class="product-card" v-for="(topProduct,i) in topProducts" :key="i">
+      <div class="tproduct-card" v-for="(topProduct,i) in topProducts" :key="i">
       <div class="img-wrapper">
        <img  class="topProduct-img" :src="topProduct.img" alt="">
       </div>
        <div class="card-copy">
-      <p>{{topProduct.productName}}</p>
-      <span v-html="topProduct.review"></span>
+      <p>{{topProduct.Title}}</p>
+      <span v-html="topProduct.Review"></span>
       <p>{{topProduct.price}}</p>
       <hr>
    </div>
@@ -45,7 +45,7 @@ export default {
    grid-row-gap:1rem;
   
 }
-.product-card{
+.tproduct-card{
   transition: 0.3s;
  
    display:flex;

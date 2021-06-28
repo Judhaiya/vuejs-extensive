@@ -1,18 +1,15 @@
 <template>
     <div class="slider">
+      
      <div class="price-range">
-       <input type="range" @input="changePrice" id="vol" v-model="vol" name="vol" min="100" max="2000"><br>
+       <input type="range" @input="update" id="vol" v-model="vol" name="vol" min="100" max="2000"><br>
         
        
        </div>
       
       <p> <span class="max">{{vol}}</span></p>
-        <button class="filter">Filter By price</button>
-          <div v-for="(category,i) in  priceRanges " :key="i" class="loop">
-     <p>{{category.productName}}</p>
-      <p>{{category.grade}}</p>
+        <button @click="changePrice" class="filter">Filter By price</button>
      
-    </div>
     </div>
 </template>
 <script>
@@ -27,18 +24,28 @@ export default {
   methods:{
      changePrice(){
      if(this.vol>200  ){
-      this.priceRanges= this.$store.state.someArray.filter(product=>product.price === 500)
+      if(this.$store.state.someArray.some(item=>item.category==='Books'||'electronics'||'cosmetics'||'Music')){
+       return this.someArray=this.$store.state.someArray.filter(product=> product.price<500)
+      }
      }
-       if(this.vol>600 && this.vol<800 ){ 
-      this.priceRanges= this.$store.state.productTypes.filter(product=>product.price>= 800 && product.price<1000)
+       if(this.vol<800 ){ 
+      if(this.$store.state.someArray.some(item=>item.category==='Books'||'electronics'||'cosmetics'||'Music')){
+       return this.someArray=this.$store.state.someArray.filter(product=> product.price<900)
+      }
      }
-        if(this.vol>1500){
-      this.priceRanges=this.$store.state.productTypes.filter(product=>product.price=== 1500)
+        if(this.vol<1200){
+         if(this.$store.state.someArray.some(item=>item.category==='Books'||'electronics'||'cosmetics'||'Music')){
+       return this.someArray=this.$store.state.someArray.filter(product=> product.price<1500)
+      }
      }
    },
 
  },
-
+computed:{
+  update(){
+    return this.vol
+  }
+}
   
 }
 </script>

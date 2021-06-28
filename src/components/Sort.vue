@@ -6,9 +6,9 @@
         <div class="sort-items-wrapper">
         <div class="sort-items">
         <select  @change="sortItems"   v-model="sorted">
-         <option>High to Extra high</option>
-         <option>medium to High</option>
-         <option>Low to Medium</option>
+         <option>High to Low</option>
+         <option>Low to High</option>
+        
       </select>
       </div>
     </div>
@@ -34,43 +34,20 @@ export default {
     },
     methods:{
         sortItems(){
-            if(this.sorted==="High to Extra high"){
-             if(this.$store.state.someArray.some(item=>item.category ==='Books')){
-                return this.$store.state.duplicate= this.$store.state.someArray.filter(item=>item.price>=1000)
-               
-             }
-              if(this.$store.state.someArray.some(item=>item.category ==='cosmetics')){
-              return  this.$store.state.duplicate= this.$store.state.someArray.filter(item=>item.price>=1000)
-               
-             }
-             if(this.$store.state.someArray.some(item=>item.category ==='electronics')){
-              return  this.$store.state.duplicate= this.$store.state.someArray.filter(item=>item.price>=1000)
-               
-             }
-             
-        }
-            else if(this.sorted==="medium to High"){
-             if(this.$store.state.someArray.some(item=>item.category ==='Books')){
-                return  this.$store.state.duplicate=this.$store.state.someArray.filter(item=>item.price<=900)
-               
-             }
-                if(this.$store.state.someArray.some(item=>item.category ==='cosmetics')){
-                return this.$store.state.duplicate= this.$store.state.someArray.filter(item=>item.price<=900)
-
-            }
-               if(this.$store.state.someArray.some(item=>item.category ==='electronics')){
-                return this.$store.state.duplicate= this.$store.state.someArray.filter(item=>item.price<=900)
-
-            }
-               if(this.$store.state.someArray.some(item=>item.category ==='Music')){
-                return this.$store.state.duplicate= this.$store.state.someArray.filter(item=>item.price<=900)
-
+            if(this.sorted==="High to Low"){
+              if(this.$store.state.someArray.some(item=>item.category==='Books'||'Music'||'cosmetics'||'electronics')){
+                  this.$store.state.someArray.sort((a,b)=>{return b.price-a.price})
+              }
+            
+            }  if(this.sorted==="Low to High"){
+              if(this.$store.state.someArray.some(item=>item.category==='Books'||'Music'||'cosmetics'||'electronics')){
+                  this.$store.state.someArray.sort((a,b)=>{return a.price-b.price})
+              }
+            
             }
              
-        }
-       
-  
-        }
+             
+         }
         },
 
     

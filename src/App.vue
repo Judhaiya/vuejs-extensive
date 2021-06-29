@@ -156,9 +156,9 @@ export default {
 .heading{
   text-align: center;
 }
-.container{
+.container-app{
   width:100%;
-  max-width:1024px;
+  max-width:1140px !important;
   margin:0 auto;
   padding:0 15px;
  

@@ -9,7 +9,7 @@
       </div>
        <div class="card-copy">
       <p>{{topProduct.Title}}</p>
-      <span v-html="topProduct.Review"></span>
+      <span  class="review-stars" v-html="topProduct.Review"></span>
       <p>{{topProduct.price}}</p>
       <hr>
    </div>
@@ -52,14 +52,21 @@ export default {
    font-size:12px;
 }
 .topProduct-img{
-   width:50px;
-   height:100px;
+   width:80px;
+   height:80px;
+   object-fit: cover;
 }
 .card-copy{
-     padding: 8px 16px;
+     padding:0 16px;
+}
+.card-copy p{
+   margin-bottom: 0;
 }
 .top-title{
    font-size:20px;
+}
+.review-stars{
+   color:gold;
 }
 
 </style>

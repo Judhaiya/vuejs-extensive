@@ -4,14 +4,14 @@
     <div class="categories-flex">
       <div class="cat-prod">
       <div class="categories">
-         <button  class="cat-buttons" v-on:click="ShowAll">All</button>
-         <hr>
+         <button  class="cat-buttons" v-on:click="ShowAll">All Categories</button>
+         <hr class="line">
         <button  class="cat-buttons" v-on:click="categorize('Books')">Books</button>
-        <hr>
+        <hr class="line">
         <button class="cat-buttons" v-on:click="categorize('cosmetics')">Cosmetics</button>
-        <hr>
+        <hr class="line">
         <button  class="cat-buttons" v-on:click="categorize('electronics')">electronics</button>
-        <hr>
+        <hr class="line">
         <button  class="cat-buttons" v-on:click="categorize('Music')">Music</button>
      </div>
      
@@ -31,13 +31,14 @@ export default{
 data(){
     return{
     something:"",
-    mode:true
+    mode:false
    
     }
 },
   methods:{
          categorize(num){
-    return  this.$store.state.someArray=this.$store.state.productTypes.filter(item => item.category===num)
+           this.mode=true
+     this.$store.state.someArray=this.$store.state.productTypes.filter(item => item.category===num)
 
   },
   ShowAll(){
@@ -65,15 +66,20 @@ data(){
 .cat-title{
   color:#808080;
    margin-bottom: 1rem;
-    margin-top: -3rem;
+    margin-top: -2rem;
+}
+.line{
+  color:#808080
 }
 .categories-wrapper{
   position:relative;
 }
 .categories{
-    width:200px;
+    width:300px;
     padding:20px;
-    box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color:	#F8F8F8;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius:4px;
    
 }
 .cat-buttons{
@@ -82,7 +88,10 @@ data(){
     border:none;
     outline:none;
     padding:10px 20px;
-    color:#fc2779;
+    color:#202020;
+    background:none;
+    font-size:18px;
+    font-weight:600;
 }
 .product-img{
   width:100%;

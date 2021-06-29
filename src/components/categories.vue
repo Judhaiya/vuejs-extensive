@@ -1,6 +1,6 @@
 <template>
     <div class="categories-wrapper">
-      <h4>Categories</h4>
+      <h5 class="cat-title">Categories</h5>
     <div class="categories-flex">
       <div class="cat-prod">
       <div class="categories">
@@ -62,6 +62,11 @@ data(){
 
 
 <style>
+.cat-title{
+  color:#808080;
+   margin-bottom: 1rem;
+    margin-top: -3rem;
+}
 .categories-wrapper{
   position:relative;
 }

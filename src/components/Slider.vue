@@ -51,6 +51,9 @@ computed:{
 </script>
 
 <style>
+.slider{
+  margin-top:1rem;
+}
 .price-range{
     display:flex;
     justify-content:flex-start ;

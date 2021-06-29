@@ -34,7 +34,7 @@
   <!-- Button trigger modal -->
   <div class="add-button-wrapper">
 <button type="button" class= "add-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add Details
+  Add Products
 </button>
   </div>
  <Sort/>
@@ -56,9 +56,10 @@
         </select>
         <label for="Product title"> Title</label>
        <input type="text" v-model="title" placeholder="lipstick"><br>
-       <label for="Price" >Price</label>
+       <label for="Price">Price</label>
        <input type="number" v-model="price" placeholder="$ 200"><br>
-       <input type="file"  v-on:change="onFileChanged" accept=".jpg,.png,gif">
+       <p class="highlight" v-if="notify">Fill</p>
+       <input type="file" accept=".jpg,.png,gif"><br>
        <input value="Topcategory" type="checkbox" v-model="quality">
        <label for="Price">Top Products</label>
       </div>
@@ -75,12 +76,16 @@
     
 
   <div class="for-categories">
+   <div class="left">
  <Categories/>
-  <UpdateProduct/>
+ <Slider/>
+ <Topproduct/>
+ </div>
+ <div class="right-wrapper">
+<UpdateProduct/>
+ </div>
   </div>
 
-     <Slider/>
-     <Topproduct/>
   </div>
    
   </div>
@@ -109,21 +114,29 @@ export default {
       quality:[],
       title:"",
       price:"",
-      Images:null
+      Images:null,
+      notify:false
+
 
     }
   },
   methods:{
-    add(){
+    add(e){
       if(this.quality.includes("Topcategory")){
       this.$store.state.BestSeller.push({productName:this.title,price:this.price,img:this.Images})
     }
-    this.price="",
-    this.title=""
-    },
-    onFileChanged(event){this.Images = event.target.files[0];
+   if(this.price==""){
+    e.preventDefault()
+    this.notify=true
+   }
+     if(this.title==""){
+    e.preventDefault()
+    this.notify=true
+   }
+    
     }
- }
+    
+    }
   
 }
 </script>
@@ -132,6 +145,7 @@ export default {
 :root{
   --primaryColor:#fc2779;
   --secondaryColor:navy;
+  --linearGradient:linear-gradient(to right, #EF629F, #EECDA3);
 }
 *{
   padding:0;
@@ -188,12 +202,15 @@ export default {
 .add-button{
   padding:5px;
   color:#fff;
-  background-color:var(--primaryColor) ;
+  background-image:var(--linearGradient) ;
   border:none;
   outline:none;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
 }
 .for-categories{
   display:flex;
+}
+.highlight{
+  color:red;
 }
 </style>

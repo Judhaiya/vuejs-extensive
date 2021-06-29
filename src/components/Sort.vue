@@ -60,6 +60,7 @@ export default {
 }
 .sort h5{
     font-size:20px;
+    color:#808080;
 }
 .loop-sortItems{
     margin-top:1rem;

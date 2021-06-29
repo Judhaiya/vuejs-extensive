@@ -6,8 +6,8 @@
      
         <div class="product-grid">
       <div v-for="(category,i) in someArray" :key="i" class="product-card">
-      
-     <img class="product-img" :src="category.img" alt="">
+      <img class="product-img" :src="category.img" alt="">
+      <p class="sale">sale!</p>
       <div class="card-copy">
       <p>{{category.productName}}</p>
       <p>$ {{category.price}}</p>   
@@ -55,8 +55,18 @@ export default{
 .product-card{
   color: #EF629F ;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position:relative;
 }
 .card-copy{
   margin-top:1rem;
+}
+.sale{
+ position:absolute;
+ top:10px;
+ left:10px;
+ background-color:#EF629F;
+ padding:5px;
+ color:#fff;
+ border-radius:4px;
 }
 </style>
